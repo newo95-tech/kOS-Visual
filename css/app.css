@@ -73,3 +73,16 @@ main { flex: 1; display: flex; min-height: 0; }
 /* Matches are brightened; the current one turns orange (outlines get hidden under stacked blocks). */
 .kos-find-hit > .blocklyPath { filter: brightness(1.45); stroke: #ffe066; stroke-width: 2px; }
 .kos-find-current > .blocklyPath { fill: #e8891a !important; filter: none; stroke: #ffd27a; stroke-width: 2px; }
+
+/* Blockly's own pop-up dialogs (new / rename variable, etc.) in the dark theme */
+.blocklyDialog { background: #252931; color: #e6e6e6; border: 1px solid #5a6270; border-radius: 8px;
+  padding: 16px 18px; box-shadow: 0 10px 30px rgba(0,0,0,.55); }
+.blocklyDialog::backdrop { background: rgba(0,0,0,.45); }
+.blocklyDialogPrompt { color: #f0f0f0; font-size: 14px; }
+.blocklyDialogInput { background: #14161a; color: #ffffff; border: 1px solid #6b7686; border-radius: 5px;
+  font-size: 15px; caret-color: #ffffff; }
+.blocklyDialogInput:focus { outline: none; border-color: #6fb3ff; box-shadow: 0 0 0 2px rgba(111,179,255,.35); }
+.blocklyDialogInput::selection { background: #3d6db3; color: #fff; }
+.blocklyDialogConfirmButton { background: #3f6b2a; border-color: #5b8f3f; color: #fff; }
+.blocklyDialogConfirmButton:hover { background: #4b7d33; }
+.blocklyDialogCancelButton { color: #e6e6e6; }
