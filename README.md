@@ -32,7 +32,7 @@ Plain static files, no build step and no backend. Blockly 13.5 is bundled in `ve
 | Category | Blocks |
 |---|---|
 | Program | program start (optional CLEARSCREEN), comment, CLEARSCREEN, raw code line, raw code value |
-| Flight | LOCK THROTTLE / STEERING, UNLOCK, HEADING(compass, pitch), UP / prograde / retrograde / facing, LOCK variable, pilot throttle |
+| Flight | LOCK THROTTLE / STEERING, UNLOCK, HEADING(compass, pitch, optional roll), UP / prograde / retrograde / facing, LOCK variable, pilot throttle |
 | Actions | STAGE, SAS / RCS / GEAR / LIGHTS / BRAKES / ABORT / AG1-10 ON/OFF |
 | Wait & triggers | WAIT n, WAIT UNTIL, WHEN … THEN (optional "keep watching" = `RETURN TRUE.`) |
 | Loops & logic | IF / ELSE IF / ELSE, UNTIL, FROM counting loop, BREAK, comparisons, AND / OR / NOT, TRUE / FALSE |

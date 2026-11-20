@@ -166,15 +166,18 @@
     },
     {
       type: 'kos_heading',
-      message0: 'HEADING( compass %1 pitch %2 )',
+      message0: 'HEADING( compass %1 pitch %2 roll %3 )',
       args0: [
         { type: 'input_value', name: 'COMPASS', check: 'Number' },
         { type: 'input_value', name: 'PITCH', check: 'Number' },
+        { type: 'input_value', name: 'ROLL', check: 'Number' },
       ],
       inputsInline: true,
       output: 'Direction',
       colour: C.flight,
-      tooltip: 'A direction: compass 90 is east; pitch 90 is straight up, 0 is the horizon.',
+      tooltip:
+        'A direction: compass 90 is east; pitch 90 is straight up, 0 is the horizon. ' +
+        'Roll is optional: leave it empty to let kOS choose, or give an angle in degrees.',
     },
     {
       type: 'kos_direction',

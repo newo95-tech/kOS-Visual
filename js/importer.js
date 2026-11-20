@@ -316,8 +316,10 @@
           const a = n.args;
           const user = fn && knownFns.get(fn.toLowerCase());
           if (user && user.returns && user.params.length === a.length) return userCall('procedures_callreturn', user, a);
-          if (fn === 'HEADING' && a.length === 2) {
-            return B('kos_heading', null, { COMPASS: toBlock(a[0]), PITCH: toBlock(a[1]) });
+          if (fn === 'HEADING' && (a.length === 2 || a.length === 3)) {
+            return B('kos_heading', null, {
+              COMPASS: toBlock(a[0]), PITCH: toBlock(a[1]), ROLL: a[2] ? toBlock(a[2]) : undefined,
+            });
           }
           if (fn === 'ROUND' && (a.length === 1 || a.length === 2)) {
             return B('kos_round', null, {

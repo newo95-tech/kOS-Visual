@@ -190,10 +190,14 @@
     'SET SHIP:CONTROL:PILOTMAINTHROTTLE TO ' + val(b, 'VALUE', Order.NONE, '0') + '.\n';
   f['kos_stage'] = () => 'STAGE.\n';
   f['kos_toggle'] = (b) => b.getFieldValue('WHAT') + ' ' + b.getFieldValue('STATE') + '.\n';
-  f['kos_heading'] = (b) => [
-    'HEADING(' + val(b, 'COMPASS', Order.NONE, '90') + ', ' + val(b, 'PITCH', Order.NONE, '90') + ')',
-    Order.CALL,
-  ];
+  f['kos_heading'] = (b) => {
+    const roll = kos.valueToCode(b, 'ROLL', Order.NONE); // optional: omitted when empty
+    return [
+      'HEADING(' + val(b, 'COMPASS', Order.NONE, '90') + ', ' + val(b, 'PITCH', Order.NONE, '90') +
+        (roll ? ', ' + roll : '') + ')',
+      Order.CALL,
+    ];
+  };
   f['kos_direction'] = (b) => [b.getFieldValue('DIR'), Order.ATOMIC];
 
   // ---- Waiting & triggers ----------------------------------------------------
