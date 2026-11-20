@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kOS Visual: block editor for Kerboscript</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">kOS <span>Visual</span></div>
+    <div class="group">
+      <button id="btn-new" title="Start a new empty program">New</button>
+      <button id="btn-example" title="Load the gravity-turn launch example">Example</button>
+      <button id="btn-import-project" title="Open a saved .blocks.json project">Open…</button>
+      <button id="btn-import-ks" title="Turn a .ks script into blocks (you can also drop a file on the page)">Import .ks…</button>
+      <button id="btn-export-project" title="Save the blocks as a .blocks.json project file">Save blocks</button>
+      <button id="btn-find" title="Find blocks in the script (Ctrl+F)">Find</button>
+      <input type="file" id="import-file" accept=".json,application/json" hidden>
+      <input type="file" id="import-ks" accept=".ks,.txt,text/plain" hidden>
+    </div>
+    <div class="group export">
+      <label for="filename">File</label>
+      <input id="filename" spellcheck="false" value="launch.ks">
+      <button id="btn-save" class="primary">Save to Ships/Script…</button>
+      <button id="btn-folder" title="Choose your KSP Ships/Script folder">Choose folder</button>
+      <button id="btn-download" title="Download the .ks file">Download .ks</button>
+      <button id="btn-copy" title="Copy the code">Copy</button>
+    </div>
+  </header>
+  <main>
+    <div id="blocklyDiv"></div>
+    <section class="preview">
+      <div class="preview-head">
+        <span>Kerboscript</span>
+        <span id="folder-label" class="muted"></span>
+      </div>
+      <div id="problems" class="problems" hidden></div>
+      <pre id="code" aria-label="Generated Kerboscript"></pre>
+      <div id="status" class="status" role="status"></div>
+    </section>
+  </main>
+
+  <script src="vendor/blockly/blockly_compressed.js"></script>
+  <script src="vendor/blockly/blocks_compressed.js"></script>
+  <script src="vendor/blockly/msg/en.js"></script>
+  <script src="js/blocks.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/find.js"></script>
+</body>
+</html>

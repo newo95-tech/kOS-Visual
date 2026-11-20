@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #1b1e24; color: #e6e6e6;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { display: flex; flex-direction: column; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  padding: 8px 12px; background: #252931; border-bottom: 1px solid #343a45; }
+.brand { font-weight: 700; font-size: 17px; letter-spacing: .5px; color: #9fd36b; }
+.brand span { color: #e6e6e6; font-weight: 400; }
+.group { display: flex; align-items: center; gap: 6px; }
+.export { margin-left: auto; }
+label { color: #aaa; }
+
+button, input { font: inherit; color: inherit; background: #323843; border: 1px solid #454c59;
+  border-radius: 5px; padding: 5px 10px; }
+button { cursor: pointer; }
+button:hover { background: #3d4451; }
+button.primary { background: #3f6b2a; border-color: #5b8f3f; }
+button.primary:hover { background: #4b7d33; }
+#filename { width: 130px; font-family: ui-monospace, Consolas, monospace; }
+
+main { flex: 1; display: flex; min-height: 0; }
+#blocklyDiv { flex: 1 1 62%; min-width: 0; position: relative; }
+.preview { flex: 0 0 38%; max-width: 560px; min-width: 260px; display: flex; flex-direction: column;
+  background: #15171c; border-left: 1px solid #343a45; }
+.preview-head { display: flex; justify-content: space-between; gap: 8px; padding: 6px 12px;
+  font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: #9aa3b2;
+  border-bottom: 1px solid #2a2f38; }
+.preview-head .muted { text-transform: none; letter-spacing: 0; text-align: right; }
+#code { flex: 1; margin: 0; padding: 12px; overflow: auto; white-space: pre;
+  font: 13px/1.5 ui-monospace, Consolas, "Courier New", monospace; color: #d6d6d6; }
+.tok-kw { color: #6fb3ff; font-weight: 600; }
+.tok-str { color: #e6b673; }
+.tok-num { color: #b5e08a; }
+.tok-com { color: #6b7686; font-style: italic; }
+
+.problems { display: flex; flex-direction: column; gap: 2px; padding: 6px 8px;
+  background: #3a3020; border-bottom: 1px solid #5c4a24; }
+.problems[hidden] { display: none; }
+.problem { text-align: left; background: none; border: 0; padding: 3px 4px; color: #f0c674;
+  font-size: 13px; border-radius: 3px; }
+.problem:hover { background: #4a3d26; }
+.status { min-height: 30px; padding: 6px 12px; font-size: 13px; border-top: 1px solid #2a2f38; }
+.status.ok { color: #9fd36b; }
+.status.warn { color: #e6c06b; }
+.status.err { color: #ff7b72; }
+
+@media (max-width: 800px) {
+  main { flex-direction: column; }
+  .preview { max-width: none; flex: 0 0 40%; border-left: 0; border-top: 1px solid #343a45; }
+  .export { margin-left: 0; }
+}
+
+/* Function blocks whose name kOS would reject */
+.kos-bad-name > .blocklyPath { stroke: #f0b232; stroke-width: 3px; stroke-dasharray: 6 3; }
+
+/* Block search at the top of the toolbox */
+.block-search { padding: 6px 6px 8px; box-sizing: border-box; }
+.block-search input { width: 100%; min-width: 0; padding: 4px 8px; font-size: 13px;
+  background: #1b1e24; border: 1px solid #454c59; border-radius: 5px; color: #e6e6e6; }
+.block-search input:focus { outline: none; border-color: #6fb3ff; }
+
+/* Find in script */
+.find-bar { position: absolute; top: 8px; right: 70px; z-index: 60; display: flex; align-items: center; gap: 4px;
+  padding: 5px 6px; background: #252931; border: 1px solid #454c59; border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.4); }
+.find-bar[hidden] { display: none; }
+.find-bar input { width: 190px; padding: 4px 8px; font-size: 13px; background: #1b1e24; }
+.find-bar input:focus { outline: none; border-color: #6fb3ff; }
+.find-bar button { padding: 3px 7px; font-size: 12px; }
+.find-count { min-width: 64px; font-size: 12px; color: #9aa3b2; text-align: center; }
+.find-count.none { color: #ff7b72; }
+/* Matches are brightened; the current one turns orange (outlines get hidden under stacked blocks). */
+.kos-find-hit > .blocklyPath { filter: brightness(1.45); stroke: #ffe066; stroke-width: 2px; }
+.kos-find-current > .blocklyPath { fill: #e8891a !important; filter: none; stroke: #ffd27a; stroke-width: 2px; }
