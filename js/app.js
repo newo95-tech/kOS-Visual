@@ -88,7 +88,8 @@
           blk('kos_negate', { X: num(1) }),
           blk('kos_round', { X: num(3.14159), DIGITS: num(1) }),
           blk('kos_minmax', { A: num(1), B: num(2) }),
-          blk('kos_math_func', { X: num(9) }),
+          blk('kos_math_func', { X: num(9) }, { FUNC: 'SQRT' }),
+          blk('kos_math_func', { X: num(-5) }, { FUNC: 'ABS' }),
         ],
       },
       {

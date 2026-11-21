@@ -127,7 +127,7 @@
         variants.push({ json: e.json, score: 2 }); // only the category or tooltip matched
       }
       for (const v of variants) {
-        const key = JSON.stringify(v.json);
+        const key = v.json.type + JSON.stringify(v.json.fields || {}) + JSON.stringify(v.json.extraState || {});
         if (seen.has(key)) continue;
         seen.add(key);
         results.push(v);

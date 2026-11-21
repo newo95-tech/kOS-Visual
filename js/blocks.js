@@ -384,7 +384,9 @@
       inputsInline: true,
       output: 'Number',
       colour: C.math,
-      tooltip: 'Maths functions. Angles are in degrees.',
+      tooltip:
+        'Maths functions: SQRT (square root), ABS (absolute value), FLOOR / CEILING (round down / up), ' +
+        'SIN / COS / TAN and their inverses (angles in degrees), LN / LOG10 (logarithms).',
     },
     {
       type: 'kos_round',
